@@ -1,23 +1,61 @@
 aid: andalin
+
 name: Andalin
-description: 'Andalin is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Andalin is a stub entry in the API Evangelist catalog, currently lacking publicly available API documentation or a verifiable corporate website. The company appears in secondary-market harvest data but no owned domain or API endpoints have been identified. Further investigation is required to determine its services, offerings, and technical interfaces.'
+
 url: https://raw.githubusercontent.com/api-evangelist/andalin/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-24 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-24'
+
 modified: '2026-09-24'
+
 tags:
 - Company
-apis: []
+- Technology
+- Data
+- Platform
+- API
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
-- type: Website
-  url: https://equityzen.com/company/andalin
+
+  - type: Hosts
+    url: hosts/andalin-hosts.yml
+  - type: Vendors
+    url: vendors/andalin-vendors.yml
+  - type: DomainSecurity
+    url: security/andalin-domain-security.yml
+  - type: Website
+    url: https://equityzen.com/company/andalin
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: "Andalin website renders only a JavaScript shell, preventing machine-readable docs discovery."
+  evidence:
+    - url: https://www.andalin.com
+      status: 200
+  checked: 2026-09-24
+x-enrichment:
+  date: '2026-09-24'
+  status: minimal
+  artifacts_added: 2
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
